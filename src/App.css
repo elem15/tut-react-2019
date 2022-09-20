@@ -16,7 +16,7 @@
 .App-header {
   margin: 0 5vw;
   background-color: #282c34;
-  min-height: 10vh;
+  min-height: 3em;
   display: flex;
   flex-direction: row;
   align-items: center;
