@@ -1,9 +1,10 @@
 import React from 'react';
+import TodoItem from '../TodoItem/TodoItem';
 import './Main.css';
 
 const Main = () => {
     const name = 'Mikhail';
-    const hours = (new Date(2022, 9, 20, 1)).getHours();
+    const hours = (new Date()).getHours();
     const timeOfDay = 
         hours < 12 
         ? 'morning' 
@@ -28,13 +29,10 @@ const Main = () => {
             </aside>
             <section>
                 <h1>Main header</h1>
-                <div>
-                    <input type="checkbox" />
-                    <p>checkbox placeholder</p>
-                    <input type="checkbox" />
-                    <p>checkbox placeholder</p>
-                    <input type="checkbox" />
-                    <p>checkbox placeholder</p>
+                <div className='todo-list'>
+                    {
+                        [1, 2, 3].map(item => <TodoItem item={item} key={item}/>)
+                    }             
                 </div>
             </section>
         </main>

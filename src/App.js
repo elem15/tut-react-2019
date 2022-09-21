@@ -1,16 +1,16 @@
-import './App.css';
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import React from 'react';
+import Joke from './Joke'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Header />
-      <Main />
-      <Footer />
+    <div>
+      <Joke q='' a='No is not'/>
+      <Joke q='is life on Mars' a=''/>
+      <Joke q='is life on Mars' a='No is not'/>
+      <Joke q='are you yang' a='yes I am'/>
+      <Joke q='are you a women' a='no I am a'/>
     </div>
-  );
+  )
 }
 
 export default App;
