@@ -5,6 +5,9 @@ main {
     text-align: left;
     margin: 5vw;
 }
+aside {
+    width: 15vw;
+}
 section {
     flex-grow: 1;
 }

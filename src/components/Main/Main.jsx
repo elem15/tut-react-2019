@@ -4,7 +4,10 @@ import TodoItem from '../TodoItem/TodoItem-class';
 import './Main.css';
 
 class Main extends Component {
-    state = { data };
+    state = { 
+        data,
+        isLoaded: false,
+    };
     handleOnCheck(id) {        
         this.setState((prevState) => ({
             data: prevState.data.map((item) => {
@@ -12,6 +15,7 @@ class Main extends Component {
                 return item;
             })
         }))
+        console.log(this.state)
     }
     render() {
         const name = 'Mikhail';
@@ -34,7 +38,7 @@ class Main extends Component {
         };
         const todoItems = this.state.data.map(item => <TodoItem name={item.company} isActive={item.isActive} key={item.id} id={item.id} handleOnCheck={this.handleOnCheck.bind(this)}/>)
 
-        return (
+        return (          
             <main>
                 <aside style={style}>
                     <div>Good {timeOfDay}</div>
@@ -49,6 +53,7 @@ class Main extends Component {
                     </div>
                 </section>
             </main>
+                    
         )
     }
 }
