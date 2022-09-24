@@ -43,3 +43,14 @@ h1 {
     font-size: 15px;
     color: #333333;
 }
+.todo-item.selected {
+    background-color: aquamarine;
+    font-weight: 500;
+}
+.App-logo.preloader {
+    position: fixed;
+    top: 25%;    
+    left: calc(50vw - 10vw);
+    margin: 0 auto;
+    height: 20vw;
+}

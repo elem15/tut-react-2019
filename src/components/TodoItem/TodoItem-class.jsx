@@ -7,11 +7,11 @@ class TodoItemClass extends React.Component {
  
     render() {
         return (
-            <div className='todo-item'>
+            <div className={!this.props.isActive ? 'todo-item' : 'todo-item selected'}>
                 <input type="checkbox" checked={this.props.isActive} 
                 onChange={this.setCheckedHandler}
                 />
-                <p>name: {this.props.name}</p>
+                <p style={this.props.isActive ? {backgroundColor: 'lightblue'} : null}>name: {this.props.name}</p>
             </div>
         )
     }

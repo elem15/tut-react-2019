@@ -15,9 +15,11 @@ class Header extends Component {
         <img src={logo} className="App-logo" alt="logo" />          
           <nav className='nav-bar'>
             <button className='btn' onClick={this.logInHandle.bind(this)}>
-              Log {this.state.logged ? 'on' : 'off'}
+              Log {this.state.logged ? 'in' : 'out'}
             </button>
-            You are currently logged {this.state.logged ? 'on' : 'off'}
+            <div>
+              You {!this.state.logged ? 'are currently logged' : "aren't logged"}
+            </div>
           </nav>        
       </header>
     )

@@ -6,23 +6,27 @@ import './App.css';
 class App extends Component {
     state = {
         isLoaded: false,
+        isFirstLoading: false
     }
     componentDidMount() {
         setTimeout(() => {
-            this.setState(() => ({isLoaded: true}))
-        }, 1000)
+            this.setState(() => ({isFirstLoading: true}))
+            setTimeout(() => {
+                this.setState(() => ({isLoaded: true}))
+            }, 1000)
+        }, 500)
     }
     render() {
-        return (
-            !this.state.isLoaded
+        return ( 
+            !this.state.isFirstLoading 
             ?
             <div>
-                LOADING
+                Loading...
             </div>
             :
             <div>
                 <Header logged={false} />
-                <Main />
+                <Main isLoaded={this.state.isLoaded}/>
                 <Footer />        
             </div>
         )
