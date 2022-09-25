@@ -1,6 +1,8 @@
 import React from 'react';
 import Product from './Product-class';
 import { data } from '../../data/facer';
+import './Product.css'
+import People from './People';
 
 const App = () => {
     const products = data.map(item => (
@@ -12,8 +14,11 @@ const App = () => {
         />
     ))
     return (
-        <div>
-            {products}
+        <div className='main'>
+            <div>
+                {products}
+            </div>
+            <People/>
         </div>
     )
 }
