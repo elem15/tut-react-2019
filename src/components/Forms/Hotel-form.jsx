@@ -131,20 +131,26 @@ class HotelForm extends Component {
                 <div>Your age: {this.state.age}</div>
                 <div>Your gender: {this.state.gender}</div>
                 <div>Your destination: {this.state.destination}</div>
+                
                 <div>Your diet: {'\n'}
-                    {this.state.dietaryRestrictions.isVegan 
-                        && ((this.state.dietaryRestrictions.isKosher || this.state.dietaryRestrictions.isLactoseFree)
-                        ? 'vegan, '
-                        : 'vegan')
+                    {
+                    ['isVegan', 'isKosher', 'isLactoseFree']
+                        .filter(item => this.state.dietaryRestrictions[item])
+                        .map(item => {
+                            switch (item) {
+                                case 'isVegan' :
+                                    return 'vegan'                                
+                                case 'isKosher' :
+                                    return 'kosher'                                
+                                case 'isLactoseFree' :
+                                    return 'lactose free'                                
+                                default: 
+                                    return null; 
+                            }
+                        })
+                        .join(', ')
                     }
-                    {this.state.dietaryRestrictions.isKosher 
-                        && (
-                            this.state.dietaryRestrictions.isLactoseFree
-                            ? 'kosher, '
-                            : 'kosher'
-                        )
-                    }
-                    {this.state.dietaryRestrictions.isLactoseFree && 'lactose free '}
+                    
                 </div>
             </div>
         )
