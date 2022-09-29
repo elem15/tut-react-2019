@@ -1,0 +1,14 @@
+.meme-image {
+    position: relative;
+    width: 300px;
+}
+.meme-top-text {
+    position: absolute;
+    top: 50px;
+    color: yellowgreen;
+}
+.meme-bottom-text {
+    position: absolute;
+    bottom: 50px;
+    color: yellow
+}
