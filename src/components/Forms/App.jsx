@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import SocialForm from './Social-form';
+import SocialForm from './SocialFormContainer';
 import './App.css';
-import HotelForm from './Hotel-form';
+import HotelForm from './HotelFormContainer';
 
 class App extends Component {
     render() {
